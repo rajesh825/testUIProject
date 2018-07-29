@@ -25,6 +25,9 @@ run from Project Root Directory
 # Potential Improvements For Future
 
   a. Configure Test Frameworks to run for multiple browsers using Grid
+  
   b. Add Automated A11y Test suite
+  
   c. Add Automated Visual Test Suite covering Critical Scenarios
+  
   d. Add Automated Security tests using ZAP
