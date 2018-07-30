@@ -34,6 +34,9 @@ public class BasePage implements Config {
     return driver.findElements(locator);
   }
 
+  public void clickOnElement(By locator){
+    find(locator).click();
+  }
   public void submit(By locator) {
     find(locator).submit();
   }

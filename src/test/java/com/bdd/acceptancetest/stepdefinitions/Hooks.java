@@ -24,7 +24,7 @@ public class Hooks {
    */
   public void openBrowser() throws MalformedURLException {
     System.out.println("Navigate to the homepage");
-   // driver = BrowserDriver.getCurrentDriver();
+    driver = BrowserDriver.getCurrentDriver();
   }
 
 

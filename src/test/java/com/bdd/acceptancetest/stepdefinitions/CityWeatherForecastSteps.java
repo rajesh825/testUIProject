@@ -27,11 +27,25 @@ public class CityWeatherForecastSteps implements Config{
 
   }
 
+  @When("^I select a day (.*)$")
+  public void i_select_a_day_Tue(int day) throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+    homepage.choseADay(day);
+
+  }
+
+
   @Then("^I should see (\\d+) day weather forecast$")
   public void i_should_see_day_weather_forecast(int noOfDays) throws Throwable {
     Assert.assertEquals(homepage.gettotalDayForecast(),noOfDays);
     Assert.assertEquals(homepage.getDayOne(),"Tue");
 
+  }
+
+  @Then("^I should see forecast hourly for selected (\\d+)$")
+  public void i_should_see_forecast_hourly_for_selected(int day) throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+    Assert.assertTrue("Hourly forecast not displayed for every 3 hours", homepage.getHourlyForecastTimes(day));
   }
 
 }

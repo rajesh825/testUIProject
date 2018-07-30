@@ -3,10 +3,31 @@
     "line": 1,
     "elements": [
       {
+        "line": 3,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 1062311776,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "I launch weather forecast site",
+            "match": {
+              "location": "CityWeatherForecastSteps.i_launch_weather_forecast_site()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
         "before": [
           {
             "result": {
-              "duration": 154053,
+              "duration": 4186933818,
               "status": "passed"
             },
             "match": {
@@ -14,14 +35,14 @@
             }
           }
         ],
-        "line": 10,
+        "line": 12,
         "name": "5 day weather forecast",
         "description": "",
         "id": "city-weather-forecast;5-day-weather-forecast;;2",
         "after": [
           {
             "result": {
-              "duration": 681612950,
+              "duration": 673895199,
               "status": "passed"
             },
             "match": {
@@ -34,22 +55,10 @@
         "steps": [
           {
             "result": {
-              "duration": 5231862153,
+              "duration": 508714942,
               "status": "passed"
             },
-            "line": 4,
-            "name": "I launch weather forecast site",
-            "match": {
-              "location": "CityWeatherForecastSteps.i_launch_weather_forecast_site()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 533283744,
-              "status": "passed"
-            },
-            "line": 5,
+            "line": 7,
             "name": "I enter city name Edinburgh",
             "match": {
               "arguments": [
@@ -67,10 +76,10 @@
           },
           {
             "result": {
-              "duration": 96116204,
+              "duration": 70994246,
               "status": "passed"
             },
-            "line": 6,
+            "line": 8,
             "name": "I should see 5 day weather forecast",
             "match": {
               "arguments": [
@@ -86,10 +95,31 @@
         ]
       },
       {
+        "line": 3,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 932508948,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "I launch weather forecast site",
+            "match": {
+              "location": "CityWeatherForecastSteps.i_launch_weather_forecast_site()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
         "before": [
           {
             "result": {
-              "duration": 67209,
+              "duration": 3788191917,
               "status": "passed"
             },
             "match": {
@@ -97,14 +127,14 @@
             }
           }
         ],
-        "line": 11,
+        "line": 13,
         "name": "5 day weather forecast",
         "description": "",
         "id": "city-weather-forecast;5-day-weather-forecast;;3",
         "after": [
           {
             "result": {
-              "duration": 715800245,
+              "duration": 678418616,
               "status": "passed"
             },
             "match": {
@@ -117,22 +147,10 @@
         "steps": [
           {
             "result": {
-              "duration": 4357874447,
+              "duration": 444468442,
               "status": "passed"
             },
-            "line": 4,
-            "name": "I launch weather forecast site",
-            "match": {
-              "location": "CityWeatherForecastSteps.i_launch_weather_forecast_site()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 460901890,
-              "status": "passed"
-            },
-            "line": 5,
+            "line": 7,
             "name": "I enter city name Glasgow",
             "match": {
               "arguments": [
@@ -150,10 +168,10 @@
           },
           {
             "result": {
-              "duration": 85807494,
+              "duration": 70462612,
               "status": "passed"
             },
-            "line": 6,
+            "line": 8,
             "name": "I should see 5 day weather forecast",
             "match": {
               "arguments": [
@@ -164,6 +182,238 @@
               ],
               "location": "CityWeatherForecastSteps.i_should_see_day_weather_forecast(int)"
             },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 3,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 930763393,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "I launch weather forecast site",
+            "match": {
+              "location": "CityWeatherForecastSteps.i_launch_weather_forecast_site()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 3519266814,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.openBrowser()"
+            }
+          }
+        ],
+        "line": 22,
+        "name": "5 day weather forecast with Hourly forecast",
+        "description": "",
+        "id": "city-weather-forecast;5-day-weather-forecast-with-hourly-forecast;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 698315612,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.embedScreenshot(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 510800698,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "I enter city name Edinburgh",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Edinburgh",
+                  "offset": 18
+                }
+              ],
+              "location": "CityWeatherForecastSteps.i_enter_city_name_Edinburgh(String)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 180355228,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "I select a day 1",
+            "match": {
+              "arguments": [
+                {
+                  "val": "1",
+                  "offset": 15
+                }
+              ],
+              "location": "CityWeatherForecastSteps.i_select_a_day_Tue(int)"
+            },
+            "matchedColumns": [
+              1
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 241286191,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "I should see forecast hourly for selected 1",
+            "match": {
+              "arguments": [
+                {
+                  "val": "1",
+                  "offset": 42
+                }
+              ],
+              "location": "CityWeatherForecastSteps.i_should_see_forecast_hourly_for_selected(int)"
+            },
+            "matchedColumns": [
+              1
+            ],
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 3,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 904001601,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "I launch weather forecast site",
+            "match": {
+              "location": "CityWeatherForecastSteps.i_launch_weather_forecast_site()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 3476579798,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.openBrowser()"
+            }
+          }
+        ],
+        "line": 23,
+        "name": "5 day weather forecast with Hourly forecast",
+        "description": "",
+        "id": "city-weather-forecast;5-day-weather-forecast-with-hourly-forecast;;3",
+        "after": [
+          {
+            "result": {
+              "duration": 689711679,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.embedScreenshot(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 442082509,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "I enter city name Glasgow",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Glasgow",
+                  "offset": 18
+                }
+              ],
+              "location": "CityWeatherForecastSteps.i_enter_city_name_Edinburgh(String)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 174381523,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "I select a day 2",
+            "match": {
+              "arguments": [
+                {
+                  "val": "2",
+                  "offset": 15
+                }
+              ],
+              "location": "CityWeatherForecastSteps.i_select_a_day_Tue(int)"
+            },
+            "matchedColumns": [
+              1
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 591531242,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "I should see forecast hourly for selected 2",
+            "match": {
+              "arguments": [
+                {
+                  "val": "2",
+                  "offset": 42
+                }
+              ],
+              "location": "CityWeatherForecastSteps.i_should_see_forecast_hourly_for_selected(int)"
+            },
+            "matchedColumns": [
+              1
+            ],
             "keyword": "Then "
           }
         ]
