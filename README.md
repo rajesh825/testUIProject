@@ -18,16 +18,20 @@ run from Project Root Directory
 
 # Test Observations
 
-1.
+1. Summary information not correct in few cases, eg: Glasgow rainfall summary is incorrect on Wed 21
 
-2.
+2. Missing requirement for air pressure info displayed in website eg:Glasgow Tue 20, has 1015mb  
 
-# Potential Improvements For Future
+# TO-DO Improvements
 
   a. Configure Test Frameworks to run for multiple browsers using Grid
   
-  b. Add Automated A11y Test suite
+  b. Add Automated a11y Test suite
   
-  c. Add Automated Visual Test Suite covering Critical Scenarios
+  c. Add Automated Visual Test Suite covering Critical test Scenarios
   
-  d. Add Automated Security tests using ZAP
+  d. Add Automated Security tests using Selenium + ZAP 
+  
+  e. Add Automated layout testing (Assuming UX Specs are defined)
+  
+ 
