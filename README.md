@@ -32,12 +32,16 @@ run from Project Root Directory
 
   a. Configure Test Frameworks to run for multiple browsers using Grid  eg: Firefox, Safari etc
   
-  b. Add Automated a11y Test suite
+  b. Improve Logging using standard logging libraries
   
-  c. Add Automated Visual Test Suite covering Critical test Scenarios
+  c. Improve Reporting mechanism using extent Reports or Allure Reports
   
-  d. Add Automated Security tests using Selenium + ZAP 
+  d. Add Automated a11y Test suite
   
-  e. Add Automated layout testing using Galen (Assuming UX Specs are defined)
+  e. Add Automated Visual Test Suite covering Critical test Scenarios
+  
+  f. Add Automated Security tests using Selenium + ZAP 
+  
+  g. Add Automated layout testing using Galen (Assuming UX Specs are defined)
   
  
