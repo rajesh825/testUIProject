@@ -14,10 +14,9 @@ public class CityWeatherForecastSteps implements Config{
 
   private Homepage homepage;
 
-
   @Given("^I launch weather forecast site$")
   public void i_launch_weather_forecast_site() throws Throwable {
-     homepage = new Homepage(BrowserDriver.getCurrentDriver());
+    homepage = new Homepage(BrowserDriver.getCurrentDriver());
 
   }
 
@@ -29,7 +28,6 @@ public class CityWeatherForecastSteps implements Config{
 
   @When("^I select a day (.*)$")
   public void i_select_a_day_Tue(int day) throws Throwable {
-    // Write code here that turns the phrase above into concrete actions
     homepage.choseADay(day);
 
   }
@@ -44,8 +42,16 @@ public class CityWeatherForecastSteps implements Config{
 
   @Then("^I should see forecast hourly for selected (\\d+)$")
   public void i_should_see_forecast_hourly_for_selected(int day) throws Throwable {
-    // Write code here that turns the phrase above into concrete actions
     Assert.assertTrue("Hourly forecast not displayed for every 3 hours", homepage.getHourlyForecastTimes(day));
+  }
+
+
+  @Then("^I should see the aggregate minimum temp and maximum temperatures for selected (\\d+) and hour <hour>$")
+  public void i_should_see_the_aggregate_minimum_temp_and_maximum_temperatures_for_selected_and_hour_hour(int day) throws Throwable {
+
+    Assert.assertTrue("Max Temp Aggergate Incorrect",homepage.isMaxTempAggregate(day));
+    Assert.assertTrue("Min Temp Aggergate Incorrect",homepage.isMinTempAggregate(day));
+
   }
 
 }
