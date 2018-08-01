@@ -20,14 +20,14 @@ Feature: City Weather Forecast
       | city      | day  |
       | Edinburgh | 1  |
       | Glasgow   | 2  |
-#
-#  Scenario Outline: 5 day weather forecast
-#    When I enter city name <city>
-#    And I select a day <day>
-#    Then I should see summary for minimim and maximum temperatures
-#    And I should see summary for Aggregate rainfall
-#
-#    Examples:
-#      | city      | day  |
-#      | Edinburgh | Tue  |
+
+  Scenario Outline:  Minimum and maximum temperatures
+    When I enter city name <city>
+    And I select a day <day>
+    Then I should see the aggregate minimum temp and maximum temperatures for selected <day> and hour <hour>
+
+    Examples:
+      | city      | day  |
+      | Edinburgh | 1    |
+      | Glasgow   | 2    |
 
