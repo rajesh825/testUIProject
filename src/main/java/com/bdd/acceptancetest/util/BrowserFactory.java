@@ -32,12 +32,12 @@ public class BrowserFactory {
 
     browser = Browsers.browserForName(Config.browser);
     os = Platforms.platformForName(Config.os);
-     // os = Platforms.platformForName(System.getProperty(OS_PROP_KEY));
+    // os = Platforms.platformForName(System.getProperty(OS_PROP_KEY));
 
     switch (os){
       case OSX:
         System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chrome_mac64/chromedriver");
-         break;
+        break;
       case WIN10:
       default:
         System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chrome_win64/chromedriver.exe");
@@ -46,12 +46,12 @@ public class BrowserFactory {
 
     switch(browser){
       case CHROME:
-        default:
+      default:
         driver = createChromeDriver();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-extensions");
         break;
-     }
+    }
 
     addAllBrowserSetup(driver);
     return driver;
