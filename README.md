@@ -14,17 +14,21 @@ User can run the tests either from Command Line or using InelliJ
 
 To Run tests using Maven --
 run from Project Root Directory
-   mvn clean test -Dbrowser="Chrome"  -Dos="WIN10"
+  in Windows 10:  mvn clean test -Dbrowser="Chrome"  -Dos="WIN10"
+  in OSX  : mvn clean test -Dbrowser="Chrome" -Dos="OSX"
 
 # Test Observations
 
-1. Summary information not correct in few cases, eg: Glasgow rainfall summary is incorrect on Wed 21
+1. Summary information not correct in few cases 
+         eg: Glasgow rainfall summary is incorrect on Wed 21
+   Same for temperature etc in few instances.
 
-2. Missing requirement for air pressure info displayed in website eg:Glasgow Tue 20, has 1015mb  
+2. No requirement for air pressure info , however its displayed in website 
+        eg:Glasgow Tue 20, has 1015mb  
 
 # TO-DO Improvements
 
-  a. Configure Test Frameworks to run for multiple browsers using Grid
+  a. Configure Test Frameworks to run for multiple browsers using Grid  eg: Firefox, Safari etc
   
   b. Add Automated a11y Test suite
   
@@ -32,6 +36,6 @@ run from Project Root Directory
   
   d. Add Automated Security tests using Selenium + ZAP 
   
-  e. Add Automated layout testing (Assuming UX Specs are defined)
+  e. Add Automated layout testing using Galen (Assuming UX Specs are defined)
   
  
