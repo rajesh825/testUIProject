@@ -14,7 +14,9 @@ User can run the tests either from Command Line or using InelliJ
 
 To Run tests using Maven --
 run from Project Root Directory
+
   in Windows 10:  mvn clean test -Dbrowser="Chrome"  -Dos="WIN10"
+  
   in OSX  : mvn clean test -Dbrowser="Chrome" -Dos="OSX"
 
 # Test Observations
