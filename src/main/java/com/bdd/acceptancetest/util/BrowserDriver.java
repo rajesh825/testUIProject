@@ -13,14 +13,14 @@ public class BrowserDriver {
   private static final Logger LOGGER = Logger.getLogger(BrowserDriver.class.getName());
   private static WebDriver mDriver;
 
-  public synchronized static WebDriver getCurrentDriver() {
+  public static synchronized WebDriver getCurrentDriver() {
     if (mDriver==null) {
       try {
         mDriver = BrowserFactory.getBrowser();
       } catch (UnreachableBrowserException e) {
-        mDriver = BrowserFactory.getBrowser();
+          mDriver = BrowserFactory.getBrowser();
       } catch (WebDriverException e) {
-        mDriver = BrowserFactory.getBrowser();
+           mDriver = BrowserFactory.getBrowser();
       }finally{
         Runtime.getRuntime().addShutdownHook(new Thread(new BrowserCleanup()));
       }
@@ -34,7 +34,7 @@ public class BrowserDriver {
       mDriver = null;
       LOGGER.info("closing the browser");
     } catch (UnreachableBrowserException e) {
-       LOGGER.info("cannot close browser: unreachable browser");
+      LOGGER.info("cannot close browser: unreachable browser");
     }
   }
 
