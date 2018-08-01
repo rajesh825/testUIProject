@@ -58,14 +58,14 @@ public class Homepage extends BasePage {
   }
 
   public String getDayOne(){
-     return waitUntilElemenetLocated(dayOneSelector).getText();
+    return waitUntilElemenetLocated(dayOneSelector).getText();
   }
 
 
   public void choseADay(int day) {
-        int daySelector = day + 1;
-        clickOnElement(By.cssSelector(dayPartOne + daySelector + dayPartTwo));
-        waitForElement(find(By.cssSelector(hourPartOne + daySelector + hourPartTwo)));
+    int daySelector = day + 1;
+    clickOnElement(By.cssSelector(dayPartOne + daySelector + dayPartTwo));
+    waitForElement(find(By.cssSelector(hourPartOne + daySelector + hourPartTwo)));
 
 
   }
@@ -76,16 +76,78 @@ public class Homepage extends BasePage {
     int totalHourlyForecasts = findElements(By.cssSelector(hourlyForecastPartOne + daySelector + hourlyForecastPartTwo)).size();
     for(int i=1; i < totalHourlyForecasts-1; i ++ ){
 
-       int firstHour = Integer.parseInt(find(By.cssSelector(hourForecastPartOne + daySelector + hourForecastPartTwo + i  + hourForecastPartThree )).getText());
-       int secondHour = Integer.parseInt(find(By.cssSelector(hourForecastPartOne + daySelector + hourForecastPartTwo + (i+1) + hourForecastPartThree )).getText());
+      int firstHour = Integer.parseInt(find(By.cssSelector(hourForecastPartOne + daySelector + hourForecastPartTwo + i  + hourForecastPartThree )).getText());
+      int secondHour = Integer.parseInt(find(By.cssSelector(hourForecastPartOne + daySelector + hourForecastPartTwo + (i+1) + hourForecastPartThree )).getText());
 
-        if (secondHour-firstHour != 300){
-          break;
-        } else {
-          result = true;
-        }
+      if (secondHour-firstHour != 300){
+        break;
+      } else {
+        result = true;
+      }
 
     }
+    return result;
+  }
+
+  // TO-DO Improvement
+  // Ensure CSS Selectors moved to Page Object locators section
+
+  /**
+   *
+   * @param day
+   * @return Return boolean indicating whether Max Temperature Aggregate Correct
+   */
+  public boolean isMaxTempAggregate(int day) {
+
+    boolean result = false;
+    int daySelector = day + 1;
+
+    //Min Temp Aggregate displayed in website
+    String maxTempAggregate = find(By.cssSelector("#root > div > div:nth-child(" + daySelector + ") > div.summary > span:nth-child(3) > span.max")).getText().split("°")[0];
+    int totalHourlyForecasts = findElements(By.cssSelector(hourlyForecastPartOne + daySelector + hourlyForecastPartTwo)).size();
+
+    int actualAggregate = 0;
+    for(int i=1; i <= totalHourlyForecasts; i ++ ){
+      String maxTemp =  find(By.cssSelector("#root > div > div:nth-child(" + daySelector + ") > div.details > div:nth-child(" + i + ") > span:nth-child(3) > span.max")).getText().split("°")[0];
+      actualAggregate += Integer.parseInt(maxTemp) ;
+    }
+
+    actualAggregate = Math.round(actualAggregate / totalHourlyForecasts);
+    LOGGER.info(" Max Temp Aggregate : " + actualAggregate );
+    LOGGER.info("Actual displayed Max Temp Aggregate : " + maxTempAggregate );
+
+    if(Integer.parseInt(maxTempAggregate)== actualAggregate){
+      result = true;
+    }
+    return result;
+
+  }
+
+  /**
+   *
+   * @param day
+   * @return Return boolean indicating whether Min Temperature Aggregate Correct
+   */
+  public boolean isMinTempAggregate(int day) {
+    boolean result = false;
+    int daySelector = day + 1;
+
+    //Min Temp Aggregate displayed in website
+    String minTempAggregate = find(By.cssSelector("#root > div > div:nth-child(" + daySelector + ") > div.summary > span:nth-child(3) > span.rmq-5ea3c959.min")).getText().split("°")[0];
+    int totalHourlyForecasts = findElements(By.cssSelector(hourlyForecastPartOne + daySelector + hourlyForecastPartTwo)).size();
+    int actualAggregate = 0;
+
+    for(int i=1; i <= totalHourlyForecasts; i ++ ){
+
+      String minTemp =  find(By.cssSelector("#root > div > div:nth-child(" + daySelector + ") > div.details > div:nth-child(" + i + ") > span:nth-child(3) > span.rmq-5ea3c959.min")).getText().split("°")[0];
+      actualAggregate += Integer.parseInt(minTemp) ;
+    }
+
+    actualAggregate = Math.round(actualAggregate / totalHourlyForecasts);
+    if(Integer.parseInt(minTempAggregate)== actualAggregate){
+      result = true;
+    }
+
     return result;
   }
 }
